@@ -41,18 +41,18 @@ yabai -m rule --add app="^Logi Options$" manage=off
 # New window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
 yabai -m config window_topmost off
-yabai -m config window_shadow float
+yabai -m config window_shadow on
 yabai -m config window_opacity off
 yabai -m config window_opacity_duration 0.00
-yabai -m config active_window_opacity 1
-yabai -m config normal_window_opacity 0.90
+# yabai -m config active_window_opacity 1
+# yabai -m config normal_window_opacity 0.90
 
 ## WTIH SIP DISABLED (Limelight build into Yabai, enable it here)
 yabai -m config window_border on
-yabai -m config window_border_width 1
-yabai -m config active_window_border_color 0xfff5e900
-yabai -m config normal_window_border_color 0x00FFFFFF
-yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config window_border_width 3
+yabai -m config active_window_border_color 0xcca53df5
+yabai -m config normal_window_border_color 0x00505050
+yabai -m config insert_feedback_color      0xffd75f5f
 
 ## some other settings
 yabai -m config auto_balance off
@@ -70,11 +70,11 @@ yabai -m config mouse_action1 move
 
 ## Change how yabai looks
 yabai -m config layout bsp
-yabai -m config top_padding 0
-yabai -m config bottom_padding 0
-yabai -m config left_padding 0
-yabai -m config right_padding 0
-yabai -m config window_gap 0
+yabai -m config top_padding 3
+yabai -m config bottom_padding 3
+yabai -m config left_padding 3
+yabai -m config right_padding 3 
+yabai -m config window_gap 2
 
 # #Ubersicht widget bar stuff
 #yabai -m signal --add event=space_changed \
@@ -87,18 +87,9 @@ yabai -m config window_gap 0
 #yabai -m signal --add event=display_changed \
 #action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
 
-# signals
-# yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
-#yabai -m signal --add event=space_changed action="yabai -m window --focus $(yabai -m query --windows --window | jq ".id")"
-# yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
-
-#testing signals
-# yabai -m signal --add event=window_destroyed action="terminal-notifier -message 'window_destroyed'"
-# yabai -m signal --add event=application_terminated action="terminal-notifier -message 'application_terminated'"
-
-## If I close the active window, focus on any other visible window.
-yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
-# yabai -m signal --add event=space_changed action="export CUR_ACTIVE_APP=\"iTerm2\""
+#automatically focus the window after a window/application is closed
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
 echo "yabai configuration loaded.."
 
