@@ -221,6 +221,16 @@ _G.packer_plugins = {
     path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",
     url = "https://github.com/inkarkat/vim-ReplaceWithRegister"
   },
+  ["vim-go"] = {
+    loaded = true,
+    path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/vim-go",
+    url = "https://github.com/fatih/vim-go"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/vim-surround",
