@@ -7,13 +7,16 @@ local keymap = vim.keymap -- for conciseness
 -- General Keymaps
 ---------------------
 
+-- Fast saving with <leader> and s
+keymap.set("n", "<leader>s", ":w<CR>")
+
+-- escape insert mode with jk
 keymap.set("i", "jk", "<ESC>")
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- delete without copying into register
-keymap.set("n", "x", '"_x')
 keymap.set("n", "d", '"_d')
 
 -- increment/decrement numbers
@@ -31,6 +34,10 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
+-- move line up down with leader up down
+keymap.set("", "<leader><down>", ":m+1<CR>")
+keymap.set("", "<leader><up>", ":m-2<CR>")
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
@@ -47,5 +54,3 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in 
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
-
-keymap.set("n", "<F9>", ":FloatermToggle<CR>")
