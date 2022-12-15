@@ -33,7 +33,10 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 	use("folke/tokyonight.nvim")
+	use("xiyaowong/nvim-transparent")
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+
+	use("szw/vim-maximizer") -- maximizes and restores current window
 
 	-- use("voldikss/vim-floaterm") -- floating terminal
 

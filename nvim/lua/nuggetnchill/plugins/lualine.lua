@@ -43,18 +43,19 @@ local colors = {
 	white = "#c6c6c6",
 	red = "#ff5189",
 	violet = "#7f43cc",
-	grey = "#303030",
+	grey = "1b1b3d",
 	orange = "#e89a25",
+	salmon = "#eb7a7a",
 }
 
 local bubbles_theme = {
 	normal = {
-		a = { fg = colors.black, bg = colors.orange },
-		b = { fg = colors.cyan, bg = colors.grey },
+		a = { fg = colors.black, bg = colors.salmon },
+		b = { fg = colors.cyan, bg = colors.black },
 		c = { fg = colors.grey, bg = colors.black },
 	},
 
-	insert = { a = { fg = colors.black, bg = colors.blue } },
+	insert = { a = { fg = colors.black, bg = colors.orange } },
 	command = { a = { fg = colors.black, bg = colors.violet } },
 	visual = { a = { fg = colors.black, bg = colors.cyan } },
 	replace = { a = { fg = colors.black, bg = colors.red } },

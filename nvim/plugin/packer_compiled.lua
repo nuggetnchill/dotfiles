@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -225,6 +230,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
+  },
+  ["vim-maximizer"] = {
+    loaded = true,
+    path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/vim-maximizer",
+    url = "https://github.com/szw/vim-maximizer"
   },
   ["vim-startify"] = {
     loaded = true,
