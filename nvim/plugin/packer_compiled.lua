@@ -231,6 +231,11 @@ _G.packer_plugins = {
     path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
   },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/Users/nugget/.local/share/nvim/site/pack/packer/start/vim-maximizer",
