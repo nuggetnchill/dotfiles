@@ -94,7 +94,7 @@ lspconfig["rust_analyzer"].setup({
 })
 
 -- configure lua server (with special settings)
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
@@ -113,3 +113,8 @@ lspconfig["sumneko_lua"].setup({
 		},
 	},
 })
+
+-- Show line diagnostics automatically in hover window
+-- You will likely want to reduce updatetime which affects CursorHold
+vim.o.updatetime = 250
+vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
