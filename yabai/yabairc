@@ -17,22 +17,21 @@ yabai -m space 9 --label nine
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
-# yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Discord$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Alfred Preferences$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Telegram$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Path Finder$" manage=off
-yabai -m rule --add app="^TeamViewer$" sticky=off layer=above manage=off
-yabai -m rule --add app="Fantastical" manage=off
+yabai -m rule --add app="^Zalo$" sticky=on layer=above manage=off
 yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Spotify$" manage=off
-yabai -m rule --add app="^Time Out$" manage=off
-yabai -m rule --add app="^perl_client_app$" manage=off
+yabai -m rule --add app="^Surfshark$" manage=off
+yabai -m rule --add app="^CapCut$" manage=off
 yabai -m rule --add app="^console$" manage=off
 yabai -m rule --add app="^Harvest$" manage=off
-yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="^Brave Browser$" manage=off
+yabai -m rule --add app="^Google Chrome$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Adobe Photoshop 2021$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
 
 
 ## Some random global settings
@@ -41,21 +40,23 @@ yabai -m rule --add app="^Logi Options$" manage=off
 # New window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
 yabai -m config window_topmost off
-yabai -m config window_shadow on
-yabai -m config window_opacity off
-yabai -m config window_opacity_duration 0.00
-# yabai -m config active_window_opacity 1
-# yabai -m config normal_window_opacity 0.90
+yabai -m config window_shadow off 
+
+# yabai -m config window_opacity_duration 0.0
+# yabai -m config active_window_opacity 1.0
+# yabai -m config normal_window_opacity 0.80
+# yabai -m config window_opacity on
 
 ## WTIH SIP DISABLED (Limelight build into Yabai, enable it here)
+#with hex color #ffc56e you need to add 00 for transparent of ff for solid
 yabai -m config window_border on
-yabai -m config window_border_width 3
-yabai -m config active_window_border_color 0xcca53df5
+yabai -m config window_border_width 3  
+yabai -m config active_window_border_color 0xffffa622
 yabai -m config normal_window_border_color 0x00505050
 yabai -m config insert_feedback_color      0xffd75f5f
 
 ## some other settings
-yabai -m config auto_balance off
+yabai -m config auto_balance on 
 yabai -m config split_ratio 0.50
 # # set mouse interaction modifier key (default: fn)
 yabai -m config mouse_modifier ctrl
@@ -70,26 +71,21 @@ yabai -m config mouse_action1 move
 
 ## Change how yabai looks
 yabai -m config layout bsp
-yabai -m config top_padding 3
-yabai -m config bottom_padding 3
-yabai -m config left_padding 3
-yabai -m config right_padding 3 
-yabai -m config window_gap 2
-
-# #Ubersicht widget bar stuff
-#yabai -m signal --add event=space_changed \
-#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
-#yabai -m signal --add event=display_changed \
-#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
-
-#yabai -m signal --add event=space_changed \
-#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
-#yabai -m signal --add event=display_changed \
-#action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+yabai -m config top_padding 5
+yabai -m config bottom_padding 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+yabai -m config window_gap 10 
 
 #automatically focus the window after a window/application is closed
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+# this is config for jankyborders, alternative to yabai border
+# config moved to /.config/borders/bordersrc
+# borders 
+#   active_color=0xffff00db 
+#   inactive_color=0xff15051d width=5 &
 
 echo "yabai configuration loaded.."
 
